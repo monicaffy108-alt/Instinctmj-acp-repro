@@ -1,12 +1,9 @@
-# 忽略无关产物
-MUJOCO_LOG.TXT
-*.pyc
-__pycache__/
-.venv/
+# 数据与日志（体积大，走 Release / 自行生成）
+datasets/
 logs/
 *.log
+MUJOCO_LOG.TXT
 
-# 数据与权重（体积大，走 Release / 自行生成）
-datasets/
+# 只保留发布用的最终 checkpoint
 *.pt
-!results/*.csv
+!assets/model_5000.pt
