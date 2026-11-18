@@ -1,0 +1,26 @@
+diff --git a/src/instinct_mj/tasks/acp/acp_env_cfg.py b/src/instinct_mj/tasks/acp/acp_env_cfg.py
+index 097953e..6a53c53 100644
+--- a/src/instinct_mj/tasks/acp/acp_env_cfg.py
++++ b/src/instinct_mj/tasks/acp/acp_env_cfg.py
+@@ -366,7 +366,7 @@ def make_events() -> dict[str, EventTermCfg]:
+                 "randomize_joint_pos_range": (-0.1, 0.1),
+                 "clamp_joint_pos_to_limits": True,
+                 "max_penetration": 0.01,
+-                "max_resample": 3,
++                "max_resample": 0,
+                 "lift_out_of_terrain": True,
+             },
+         ),
+diff --git a/src/instinct_mj/tasks/acp/config/g1/acp_tracking_cfg.py b/src/instinct_mj/tasks/acp/config/g1/acp_tracking_cfg.py
+index 8e512e5..7bf2f60 100644
+--- a/src/instinct_mj/tasks/acp/config/g1/acp_tracking_cfg.py
++++ b/src/instinct_mj/tasks/acp/config/g1/acp_tracking_cfg.py
+@@ -256,7 +256,7 @@ class G1AcpTrackV1EnvCfg_PLAY(G1AcpTrackV1EnvCfg):
+             distance=2.1213,
+             elevation=45.0,
+             azimuth=0.0,
+-            origin_type=ViewerConfig.OriginType.WORLD,
++            origin_type=ViewerConfig.OriginType.ASSET_BODY,
+             entity_name="robot",
+             body_name="torso_link",
+         )
