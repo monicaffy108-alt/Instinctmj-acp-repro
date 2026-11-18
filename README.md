@@ -73,6 +73,14 @@ python scripts/04_check_dataset.py ~/Datasets/acp/acp_motions_v1_50hz
 ./scripts/06_play_policy.sh <run目录名> model_5000.pt
 ```
 
+想直接看效果、不想训练？仓库里带了 `assets/model_5000.pt`，把它拷进任意 run 目录即可播放：
+
+```bash
+mkdir -p logs/instinct_rl/demo/2026-01-01_00-00-00_demo
+cp assets/model_5000.pt logs/instinct_rl/demo/2026-01-01_00-00-00_demo/
+./scripts/06_play_policy.sh demo/2026-01-01_00-00-00_demo model_5000.pt
+```
+
 TensorBoard（注意：**不要用 `uv run`**，见 §6.7）：
 
 ```bash
@@ -240,6 +248,7 @@ TensorBoard 2.20 直接报 `ModuleNotFoundError`。用 `.venv/bin/tensorboard` �
 │   ├── play_reference.py            # 回放参考动作（不经策略）
 │   └── live_view.sh                 # 训练中循环加载最新 checkpoint
 ├── assets/
+│   ├── model_5000.pt                # 5000 轮训练好的 Stage-1 策略（可直接 play）
 │   ├── flat.stl                     # 29x18x0.5 m 封闭立方体
 │   ├── flat.geoms.yaml              # box 解析几何
 │   └── metadata.example.yaml        # 40 条动作的 metadata 样例
